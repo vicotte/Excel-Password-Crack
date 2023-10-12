@@ -99,7 +99,6 @@ function App() {
                   zip.file(file.name, modifiedXmlString);
                 }
               }
-              // Debut crack VBA
               if (isVbaChecked.current && file.name === 'xl/vbaProject.bin') {
                 console.log("c'est passé");
                 const byteArray = await zip
@@ -147,13 +146,7 @@ function App() {
           });
 
           await writeBinaryFile(hackedFile, zipContent);
-          // await message(
-          //   'You can find the unprotected version of the excel in the same folder as the original',
-          //   {
-          //     title: 'File Cracked',
-          //     type: 'info',
-          //   },
-          // );
+
           setAlertIsShown(true);
 
           if (isVbaChecked.current && excelExtension === 'xlsm') {
@@ -198,20 +191,20 @@ function App() {
           </div>
           <div className='container mx-auto flex flex-col justify-center items-center grow'>
             <h1 className='text-3xl font-bold align-middle mb-10 text-gray-50'>
-              Choose your Excel
+              Unleash your Excel file
             </h1>
             <CheckboxWic name='ws' handleChange={handleCheckboxChange}>
-              Crack Workbook Password
+              Remove Workbook Password
             </CheckboxWic>
             <CheckboxWic name='vba' handleChange={handleCheckboxChange}>
-              Crack VBA Password (Beta)
+              Remove VBA Password (Beta)
             </CheckboxWic>
             <Button
               variant='outline'
               className='mt-4'
               onClick={openFolderDialog}
             >
-              Crack Excel
+              Do it
             </Button>
           </div>
           <div className='h-16 flex justify-end items-center'></div>

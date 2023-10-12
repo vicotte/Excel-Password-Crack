@@ -25,7 +25,7 @@ const Alert: React.FC<AlertProps> = ({
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>
-            Your file has been cracked successfully.
+            Your file has been unleashed successfully.
           </AlertDialogTitle>
           <AlertDialogDescription>
             You will find a UNPROTECTED version of your excel file in the same
